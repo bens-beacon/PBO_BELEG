@@ -1,0 +1,7 @@
+{
+  "modul": [ 
+        {"name":"elektronik für Informatiker", "art":"pflichtmodul", "credits":"7", "semester":"1"},
+        {"name":"Grundlagen der Informatik I", "art":"pflichtmodul", "credits":"5", "semester":"1"},
+        {"name":"Programmierung I", "art":"pflichtmodul", "credits":"5", "semester":"1"}
+    ]
+}
