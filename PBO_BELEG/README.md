@@ -3,7 +3,8 @@
 Lese die JSON-Datei aus und visualisiere deren Inhalte!
 
 ## Was ist noch zu tun:
-
+ 
+* alles
 
 
 ## Eigentliche Aufgabe
