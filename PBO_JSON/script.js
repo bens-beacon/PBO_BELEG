@@ -18,7 +18,7 @@ loadJSON(function (response) {
     var myJSON = JSON.parse(response);
     // Variante 1
     document.getElementById("name").innerHTML = myJSON.modul[0].name;
-    document.getElementById("art").innerHTML = myJSON.modul[1].art;
+    document.getElementById("art").appendChild = myJSON.modul[0].art;
     // Variante 2
 
     for(var x in myJSON.modul){

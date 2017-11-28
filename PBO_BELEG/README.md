@@ -17,3 +17,10 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 * Filtern der Datensätze
 * Anzeige der Datensätze
 * Generierung neuer Datensätze
+
+## Aufbaue der JSON
+
+1. system
+2. entrypoint
+3. process
+	* 
