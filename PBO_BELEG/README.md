@@ -23,4 +23,14 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 1. system
 2. entrypoint
 3. process
-	* 
+4. parent
+5. start
+6. result
+7. Childs
+.. * id 
+.. * ...
+8. Stakeholder
+.. * id 
+.. * ...
+9. locations
+
