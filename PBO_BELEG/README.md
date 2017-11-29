@@ -27,10 +27,10 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 5. start
 6. result
 7. Childs
-.. * id 
-.. * ...
+	1. id 
+	2. * ...
 8. Stakeholder
-.. * id 
-.. * ...
+	1. id 
+	2. * ...
 9. locations
 
