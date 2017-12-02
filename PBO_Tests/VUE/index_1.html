@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    <ul>
+        <li v-for="(item,index) in list">{{item + " " + index}}</li>
+        <button type="button" v-on:click="changeNumber">Change Number</button>
+    </ul>
+    <input type="text" v-model="searchQuery">
+    <p v-if="isSearching">Searching...</p>
+    <li v-for="result in results">{{ result }}</li>
+    </div>
+</body>
+<script >
+    var vue = new Vue ({
+    el: "#app",
+    data: 
+    {
+        isSearching: false,
+        results: [],
+        searchQuery: '',
+        list: [1,2,3,4,5]
+    },
+    methods: 
+    {
+        changeNumber: function () 
+        {
+            //this.list[1] = 100;
+            Vue.set (this.list, 1, 100);
+        }
+    },
+
+    watch: 
+    {
+        searchQuery: function(query) 
+        {
+            this.isSearching = true;
+            var vm = this;
+            setTimeout(function() 
+            {
+                vm.results = ['JavaScript', 'PHP', 'MySQL'];    
+                vm.isSearching = false;
+            }, 500);
+        }
+    }
+    });
+</script>
+</html>
