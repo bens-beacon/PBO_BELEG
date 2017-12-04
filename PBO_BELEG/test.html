@@ -9,6 +9,7 @@
     <link href="style/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/css/own.css" rel="stylesheet">
     <script src="style/js/bootstrap.min.js"></script> 
+    <!-- Vue -->
     <script src="dist/vue.js"></script>
   </head>
   <body>
@@ -16,16 +17,16 @@
     <!-- Header -->
       <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header">              
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Navigation ein-/ausblenden</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+              <a class="navbar-brand" href="#">Projekt-Titel</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <a class="navbar-brand" href="#">Projekt-Titel</a>
               <ul class="nav navbar-nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -42,11 +43,10 @@
       </nav>
     <!-- /Header -->
     <!-- Content -->
-      <div class="container-fluid">
-        
-          <div class="row">
-            <div class="col-lg-2 "></div>
-            <div class="col-lg-5 ">
+      <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-8 ">
               <div class="card">
                   <div class="card-block">
                     <h4 class="card-title">Event</h4>
@@ -58,13 +58,12 @@
               </div>
             </div>
           
-            <div class="col-lg-4 pull-right">
-              sdfghh
+            <!-- Sidebar -->
+            <div class="col-lg-3 pull-right">
+            MenuPunkte,....
             </div>
 
-          </div>  
-          
-          
+          </div>    
       </div>
     <!--/ Content -->
     <!-- Footer   -->
@@ -81,8 +80,9 @@
       </footer>
     </div>
     <!-- /Footer  -->
+    <!-- Javascript -->
     <script src="dist/jquery-3.2.1.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="style  /js/bootstrap.min.js"></script>
     <script src="dist/script.js"></script>
   </body>
 </html>

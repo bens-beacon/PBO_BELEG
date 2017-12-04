@@ -4,9 +4,15 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 
 ## Was ist noch zu tun:
  
-* alles
+* Schriften ändern
 
+## Fragen
 
+* Aufbau der JSON ist unklar.
+	Kann es mehrere Process geben?
+	Wie steht stakeholder in Beziehung zum Process?
+	Wie steht locations in Beziehung zu Process?
+	
 ## Eigentliche Aufgabe
 
 * interaktive Website als One-Pager
@@ -23,14 +29,7 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 1. system
 2. entrypoint
 3. process
-4. parent
-5. start
-6. result
-7. Childs
-	1. id 
-	2. * ...
-8. Stakeholder
-	1. id 
-	2. * ...
-9. locations
+	1. ...
+	2. results
+	3. childs
 
