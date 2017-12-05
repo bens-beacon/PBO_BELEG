@@ -1,19 +1,25 @@
 # Beleg
 
-Lese die JSON-Datei aus und visualisiere deren Inhalte!
+Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein One-Pager sein, aber dennoch total interaktiv sein. Wichtig in der JSON ist alles ab Process, das davor gilt nur für die Visualisierung. 
 
 ## Was ist noch zu tun:
- 
+* Also Amfang der Seite soll ein Bereich sein, wo man auswählen kann was wie angezeigt werden soll!
+* Beispiele können sein:
+	1. Nach Name Sortiert
+	2. Welcher Initiator ist in welchem Projekt mit drin
+	3. Zeitstrahl wann welches Projekt
+	4. Nur die Projekte an einem bestimmten Ort
+	5. Welche Person/Stakeholder ist daran beteiligt
+* Jedes Projekt kann zum Beispiel als Karte ausggeben werden. Wichtig ist vielleicht das viele Informationen zu den Projekten angezeigt werden. 
+* Suche könnte man implementieren
+* Sidebar wo Personen, Initator, Orte,... angezeigt werden
 * Schriften ändern
 
 ## Fragen
 
-* Aufbau der JSON ist unklar.
-	Kann es mehrere Process geben?
-	Wie steht stakeholder in Beziehung zum Process?
-	Wie steht locations in Beziehung zu Process?
+... keine
 	
-## Eigentliche Aufgabe
+## Eigentliche Aufgabe von Prof. Freitag
 
 * interaktive Website als One-Pager
 * nutze CSS Bibliothek -> Bootstrap
@@ -26,10 +32,4 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte!
 
 ## Aufbaue der JSON
 
-1. system
-2. entrypoint
-3. process
-	1. ...
-	2. results
-	3. childs
-
+http://jsonviewer.stack.hu/ ... Code einfügen anschauen.
