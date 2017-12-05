@@ -33,3 +33,7 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 ## Aufbaue der JSON
 
 http://jsonviewer.stack.hu/ ... Code einfügen anschauen.
+
+## Kreise
+
+https://github.com/pguso/jquery-plugin-circliful

@@ -8,13 +8,14 @@
     <!-- Bootstrap -->
     <link href="style/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/css/own.css" rel="stylesheet">
-    <script src="style/js/bootstrap.min.js"></script> 
+    <link href="style/css/jquery.circliful.css"  rel="stylesheet">
     <!-- Vue -->
     <script src="dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
     <!-- Header -->
+    
       <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">              
@@ -28,9 +29,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#view">Ansicht</a></li>
+                <li><a href="#contact">Kontakt</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -45,53 +45,88 @@
     <!-- Content -->
       <div class="container">
         <div class="row">
-            
+            <!-- Middle -->
             <div class="col-lg-8 ">
-            
-            <div v-for="item_0 in json_data.process">
-            {{item_0.name}}
-            
-
-
-
-            <!-- Childs -->
-            <div v-for="item_1 in json_data.process.childs">
-              <div class="card cards " id="{{item_1.id}}">
-                  <div class="card-block">
-                    <h4 class="card-title">{{item_1.name}}</h4>
+              <!-- Control -->
+              <div class="card text-center control" id="view">
+                  <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                  </div>
+                </div>
+              <hr>
+              <!-- Childs -->
+              <div v-for="item_1 in json_data.process.childs">
+                <div class="panel panel-default" id="{{item_1.id}}">
+                  <div class="panel-heading"><h4>{{item_1.name}}</h4></div>
+                  <div class="panel-body">
                     <h6 class="card-subtitle mb-2 text-muted">{{item_1.description}}</h6>
                     <p class="card-text"></p>
                     <a href="#" class="{{item_1.link}}">Card link</a>
                     <a href="#" class="card-link">Another link</a>
                   </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
 
             </div>
-            <!-- Sidebar -->
+
+          <!-- Sidebar -->
             <div class="col-lg-3 pull-right">
-              <h2>Stakeholder</h2>
+              <h2>Statistik</h2>
+              <hr>
+              <h3>Suche</h3>
+                <!-- Circle -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="circle_1">Projekte</div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="circle_2">Personen</div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="circle_3">Orte</div>
+                    </div>
+                  </div> 
+              <h3>Datei</h3>
+              <hr>
+              <table class="table table-striped">
+              <tr>
+                <td>Projekte:</td>
+                <td>{{child_num}}</td>
+              </tr>
+              <tr>
+                <td>Orte:</td>
+                <td>{{locat_num}}</td>
+              </tr>
+              <tr>
+                <td>Personen:</td>
+                <td>{{stake_num}}</td>
+              </tr>
+              </table>
+
+
+
                 <div v-for="item_0 in json_data.process.stakeholder">
                     <div class="card-block">
                         <h4 class="card-title">{{item_0.name}}</h4>
                         <div></div>
                         <p class="card-subtitle mb-2 text-muted">{{item_0.type}}</p>
-
                     </div>
-
                 </div>
             </div>
 
-          </div>    
+        </div>
       </div>
     <!--/ Content -->
     <!-- Footer   -->
@@ -105,13 +140,15 @@
              <p class="card-text">{{json_data.system.email}}</p>    
            </div>
           </div>
-        </div>
+        </div>    
       </footer>
     </div>
+
     <!-- /Footer  -->
     <!-- Javascript -->
     <script src="dist/jquery-3.2.1.min.js"></script>
-    <script src="style  /js/bootstrap.min.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
     <script src="dist/script.js"></script>
+    <script src="style/js/jquery.circliful.min.js"></script>
   </body>
 </html>
