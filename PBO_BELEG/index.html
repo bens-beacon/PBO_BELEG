@@ -93,15 +93,22 @@
                         </tr>
                         <tr>
                           <td>Wann?</td>
-                          <td>{{stake_num}}</td>
+                          <td>{{GetTime(item_1.start)}} {{item_1.end ? "-" + GetTime(item_1.end): ""}} </td>
                         </tr>
-                    </table>
+                        <tr>
+                          <td>Teilnehmer</td>
+                          <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{item_1.participation}}</td>
+                        </tr>
+                  </table>
                   </div>
                     </div> 
                   </div>
                 </div>
               </div>
-            </div>
 
           <!-- Sidebar -->
             <div class="col-lg-3 pull-right">
@@ -136,13 +143,16 @@
                 <td>{{stake_num}}</td>
               </tr>
               </table>
+              <h3>Personen</h3>
               <hr>
               <div v-for="item_0 in json_data.process.stakeholder">
+                <button type="button" class="btn btn-default" v-on:click="KlappOut(i)">    
                 <div class="card-block">
                   <h4 class="card-title">{{item_0.name}}</h4>
                   <div></div>
                   <p class="card-subtitle mb-2 text-muted">{{item_0.type}}</p>
                   </div>
+                </button>  
               </div>
             </div>
 

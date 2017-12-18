@@ -17,7 +17,7 @@
         } 
     }
 
-    /* Show/Hide */
+    
      
 
 
@@ -68,12 +68,20 @@
                 var tmp = this.json_data.process.locations;  
                 for (var index in tmp){
                     if(id == tmp[index].id) return tmp[index].city;
+                    
                 }
+            },
+            GetTime: function(time){
+                var string=time.split("T");
+                var date = string[0];
+                string = string[1].split("+");
+                var time = string[0];
+                return time + " " + date;
             },
             SetRadius: function(){
 
             },
-            KlappOut: function(id){
+            KlappOut: function(id){                 /* Show / Hide      */
                 var x = document.getElementById(id);
                 if (x.style.display === "none") {
                     x.style.display = "block";
