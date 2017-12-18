@@ -49,36 +49,58 @@
             <div class="col-lg-8 ">
               <!-- Control -->
               <div class="card text-center control" id="view">
-                  <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                      </li>
-                    </ul>
+                <h4>Suche</h4>
+                <hr>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" v-on:click="SortName">Projekt-Titel
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" v-on:click="SortInitiator">Initiator
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">Ort
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </button>
                   </div>
-                  <div class="card-body">
-                  </div>
+
                 </div>
               <hr>
               <!-- Childs -->
-              <div v-for="item_1 in json_data.process.childs">
-                <div class="panel panel-default" id="{{item_1.id}}">
+              <div v-for="(item_1, i) in json_tmp">
+                <div class="panel panel-default" id="item_1.id">
                   <div class="panel-heading"><h4>{{item_1.name}}</h4></div>
                   <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-10">
                     <h6 class="card-subtitle mb-2 text-muted">{{item_1.description}}</h6>
+                    </div>
+                    <div class="col-lg-2">
+                    <button type="button" class="btn btn-default" v-on:click="KlappOut(i)">
+                      <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </button>  
+                    </div>
+                  </div>
                     <p class="card-text"></p>
-                    <a href="#" class="{{item_1.link}}">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <div :id=i>
+                    <table class="table table-striped">
+                        <tr>
+                          <td>Wo?</td>
+                          <td>{{GetLocation(item_1.location)}}</td>
+                        </tr>
+                        <tr>
+                          <td>Wer?</td>
+                          <td>{{GetInitiator(item_1.initiator)}}</td>
+                        </tr>
+                        <tr>
+                          <td>Wann?</td>
+                          <td>{{stake_num}}</td>
+                        </tr>
+                    </table>
+                  </div>
+                    </div> 
                   </div>
                 </div>
               </div>
-
             </div>
 
           <!-- Sidebar -->
@@ -114,16 +136,14 @@
                 <td>{{stake_num}}</td>
               </tr>
               </table>
-
-
-
-                <div v-for="item_0 in json_data.process.stakeholder">
-                    <div class="card-block">
-                        <h4 class="card-title">{{item_0.name}}</h4>
-                        <div></div>
-                        <p class="card-subtitle mb-2 text-muted">{{item_0.type}}</p>
-                    </div>
-                </div>
+              <hr>
+              <div v-for="item_0 in json_data.process.stakeholder">
+                <div class="card-block">
+                  <h4 class="card-title">{{item_0.name}}</h4>
+                  <div></div>
+                  <p class="card-subtitle mb-2 text-muted">{{item_0.type}}</p>
+                  </div>
+              </div>
             </div>
 
         </div>
@@ -135,9 +155,9 @@
          <div class="card">
            <div class="card-block card-inverse">
               <h4 class="card-title">Kontakt</h4>
-             <p class="card-text">{{json_data.system.contact}}</p>
-             <p class="card-text">{{json_data.system.website}}</p>
-             <p class="card-text">{{json_data.system.email}}</p>    
+             <p class="card-text">{{child_num}}</p>
+             <p class="card-text"></p>
+             <p class="card-text"></p>    
            </div>
           </div>
         </div>    
