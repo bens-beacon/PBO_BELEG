@@ -138,6 +138,18 @@
                 } else {
                     x.style.display = "block";
                 }
+            },                             /* return Color              */
+            SetColorParti: function(state){
+                switch(state) {
+                    case "closed":
+                        return "bg-danger";
+                    case "partial opened":
+                        return "bg-warning"
+                    case "open":
+                        return "bg-success"
+                    default: 
+                        return "";
+                }      
             }
         },  
         computed:{                          /* supervise vars           */

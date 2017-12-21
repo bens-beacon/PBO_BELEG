@@ -10,6 +10,7 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 	3. Zeitstrahl wann welches Projekt
 	4. Nur die Projekte an einem bestimmten Ort
 	5. Welche Person/Stakeholder ist daran beteiligt
+	6. Suche nach Status ob Offe/Geschlossen
 * Jedes Projekt kann zum Beispiel als Karte ausggeben werden. Wichtig ist vielleicht das viele Informationen zu den Projekten angezeigt werden. 
 * Suche könnte man implementieren
 * Sidebar wo Personen, Initator, Orte,... angezeigt werden

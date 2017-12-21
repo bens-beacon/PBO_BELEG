@@ -29,8 +29,13 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#view">Ansicht</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ansicht <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="btn" v-on:click="KlappAllOut()">Alle Karten aus/einklappen</a></li>
+                    </ul>
+                  </li> 
+                  <li><a href="#contact">Kontakt</a></li>             
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -51,7 +56,7 @@
               <div class="card text-center control" id="view">
                 <h4>Suche</h4>
                 <hr>
-
+                
                   <div class="btn-group">
                     <button type="button" class="btn btn-default" v-on:click="SortName">Projekt-Titel
                         <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
@@ -63,9 +68,6 @@
                         <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                     </button>
                   </div>
-                  <label class="form-check-label"> Klappen:
-                      <input id="ckb_klapp" v-on:click="KlappAllOut()" class="form-check-input" type="checkbox" value="">
-                    </label>
                 </div>
               <hr>
               <!-- Childs -->
@@ -86,9 +88,11 @@
                     <p class="card-text"></p>
                     <div :id=i class="mem">
                     <h4>Infos</h4>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                      
                     <table class="table table-striped">
                         <tr>
-                          <td>Wo?</td>
+                          <td class="col-lg-2">Wo?</td>
                           <td>{{GetLocation(item_1.location)}}</td>
                         </tr>
                         <tr>
@@ -97,7 +101,7 @@
                         </tr>
                         <tr>
                           <td>Wann?</td>
-                          <td>{{GetTime(item_1.start)}} {{item_1["end (optional)"] ? "-" + GetTime(item_1["end (optional)"]): ""}} </td>
+                          <td>{{GetTime(item_1.start)}} {{item_1["end (optional)"] ? "- " + GetTime(item_1["end (optional)"]): ""}} </td>
                         </tr>
                         <tr>
                           <td>Teilnehmer</td>
@@ -105,10 +109,11 @@
                         </tr>
                         <tr>
                             <td>Status</td>
-                            <td class="participation">{{GetParticipation(item_1.participation,i)}}</td>
+                            <td  v-bind:class="SetColorParti(item_1.participation)">{{item_1.participation}}</td>
                         </tr>
                     </table>
                     <hr>
+                    </div>
                     <h4>Verbindungen</h4>
                     <hr>
                       <table class="table ">
