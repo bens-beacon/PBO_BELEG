@@ -14,6 +14,10 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * Suche könnte man implementieren
 * Sidebar wo Personen, Initator, Orte,... angezeigt werden
 * Schriften ändern
+* Suche schöner gestalten
+* Wenn auf Ort oder Initiator geklickt wird, dann slide nach links und Infos über ,....
+* Verbindungen schöner darstellen
+* Lösungen anzeigen?! -> Weiß nicht ob wichtig.
 
 ## Fragen
 

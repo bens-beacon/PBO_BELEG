@@ -51,7 +51,8 @@
               <div class="card text-center control" id="view">
                 <h4>Suche</h4>
                 <hr>
-                <div class="btn-group">
+
+                  <div class="btn-group">
                     <button type="button" class="btn btn-default" v-on:click="SortName">Projekt-Titel
                         <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                     </button>
@@ -62,7 +63,9 @@
                         <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                     </button>
                   </div>
-
+                  <label class="form-check-label"> Klappen:
+                      <input id="ckb_klapp" v-on:click="KlappAllOut()" class="form-check-input" type="checkbox" value="">
+                    </label>
                 </div>
               <hr>
               <!-- Childs -->
@@ -81,7 +84,8 @@
                     </div>
                   </div>
                     <p class="card-text"></p>
-                    <div :id=i>
+                    <div :id=i class="mem">
+                    <h4>Infos</h4>
                     <table class="table table-striped">
                         <tr>
                           <td>Wo?</td>
@@ -93,19 +97,36 @@
                         </tr>
                         <tr>
                           <td>Wann?</td>
-                          <td>{{GetTime(item_1.start)}} {{item_1.end ? "-" + GetTime(item_1.end): ""}} </td>
+                          <td>{{GetTime(item_1.start)}} {{item_1["end (optional)"] ? "-" + GetTime(item_1["end (optional)"]): ""}} </td>
                         </tr>
                         <tr>
                           <td>Teilnehmer</td>
-                          <td>...</td>
+                          <td>{{GetMembers(item_1.participants)}}</td>
                         </tr>
                         <tr>
                             <td>Status</td>
-                            <td>{{item_1.participation}}</td>
+                            <td class="participation">{{GetParticipation(item_1.participation,i)}}</td>
                         </tr>
-                  </table>
+                    </table>
+                    <hr>
+                    <h4>Verbindungen</h4>
+                    <hr>
+                      <table class="table ">
+                        <thead class="thead-inverse">
+                          <tr>
+                            <td class="col-lg-6">Von:</td>
+                            <td>Zu:</td>
+                          </tr>
+                        </thead>  
+                          <tr>
+                            <td>{{GetConnections(item_1.connection.from)}}</td>
+                            <td>{{GetConnections(item_1.connection.to)}}</td>
+                          </tr>
+                      </table>
+                      <h4>Ergbenisse</h4>
+                      <hr>
+                    </div>
                   </div>
-                    </div> 
                   </div>
                 </div>
               </div>
@@ -145,15 +166,18 @@
               </table>
               <h3>Personen</h3>
               <hr>
-              <div v-for="item_0 in json_data.process.stakeholder">
-                <button type="button" class="btn btn-default" v-on:click="KlappOut(i)">    
-                <div class="card-block">
-                  <h4 class="card-title">{{item_0.name}}</h4>
-                  <div></div>
-                  <p class="card-subtitle mb-2 text-muted">{{item_0.type}}</p>
-                  </div>
-                </button>  
-              </div>
+              <ol class="list-unstyled">
+                <div v-for="item_0 in json_data.process.stakeholder">
+                  <li><a href="#">{{item_0.name}}</a></li>   
+                </div>
+              </ol>
+              <h3>Orte</h3>
+              <hr>
+              <ol class="list-unstyled">
+                <div v-for="item_0 in json_data.process.locations">
+                  <li><a href="#">{{item_0.city}}</a></li>   
+                </div>
+              </ol>
             </div>
 
         </div>
@@ -165,9 +189,9 @@
          <div class="card">
            <div class="card-block card-inverse">
               <h4 class="card-title">Kontakt</h4>
-             <p class="card-text">{{child_num}}</p>
-             <p class="card-text"></p>
-             <p class="card-text"></p>    
+             <p class="card-text">{{json_data.system.email}}</p>
+             <p class="card-text">{{json_data.system.contact}}</p>
+             <p class="card-text">{{json_data.system.website}}</p>    
            </div>
           </div>
         </div>    
