@@ -39,7 +39,7 @@
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
-                  <input type="text" placeholder="Event" class="form-control">
+                  <input v-on:keyup="search" type="text" placeholder="Event" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Suchen</button>
               </form>
@@ -88,8 +88,6 @@
                     <p class="card-text"></p>
                     <div :id=i class="mem">
                     <h4>Infos</h4>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                      
                     <table class="table table-striped">
                         <tr>
                           <td class="col-lg-2">Wo?</td>
@@ -113,9 +111,7 @@
                         </tr>
                     </table>
                     <hr>
-                    </div>
                     <h4>Verbindungen</h4>
-                    <hr>
                       <table class="table ">
                         <thead class="thead-inverse">
                           <tr>
@@ -128,8 +124,6 @@
                             <td>{{GetConnections(item_1.connection.to)}}</td>
                           </tr>
                       </table>
-                      <h4>Ergbenisse</h4>
-                      <hr>
                     </div>
                   </div>
                   </div>

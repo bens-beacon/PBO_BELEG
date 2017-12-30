@@ -87,8 +87,8 @@
                 string = string[1].split("+");
                 var time = string[0];
                 return time + " " + date;
-            },
-            GetMembers: function(tmp_part){ /* Get alle Members return */
+            }, 
+            GetMembers: function(tmp_part){ /* Get alle Members return  */
                 var tmp_stak = this.json_data.process.stakeholder; 
                 var str = "";
                 var c = 0;
@@ -150,6 +150,12 @@
                     default: 
                         return "";
                 }      
+            },                             /* Big SEARCH                */
+            search: function(event){
+                var tmp_text = event.target.value;
+                this.json_tmp = this.json_tmp.filter(function (n){ return n.name <= tmp_text;});
+                if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
+                //console.log(this.password);
             }
         },  
         computed:{                          /* supervise vars           */
