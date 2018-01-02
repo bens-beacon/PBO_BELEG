@@ -17,7 +17,8 @@
         } 
     }
 
-    
+    function SetRadius(value){
+    }
 
 
     /* ---- VUE ------------------------------------------------------- */
@@ -117,9 +118,6 @@
                     }
                 }
                 return str;
-            },            
-            SetRadius: function(){
-
             },                              /* Toogle Show all Cards    */
             KlappAllOut: function(){           
                 var elements = document.getElementsByClassName("mem");
@@ -153,13 +151,27 @@
             },                             /* Big SEARCH                */
             search: function(event){
                 var tmp_text = event.target.value.toUpperCase();
-
-                //this.json_tmp = this.json_tmp.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
-                this.json_tmp = this.json_tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.participation;});
                 
+                // search for state
+                //this.json_tmp = this.json_tmp.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
+                
+                // serach for project
+                //this.json_tmp = this.json_tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.name;});
+                
+                // search for location
+                var tmp = this.json_data.process.locations; 
+                var loc_id = tmp.filter(function (n) { if (n.city.toUpperCase().includes(tmp_text)) return n.id;});
+                this.json_tmp = this.json_tmp.filter(function (n) { if (n.location[0] == loc_id[0].id) return n.location;});
+               
+                // search for person
+                //var tmp = this.json_data.process.stakeholder; 
+                //var sta_id = tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.id;});
+                //console.log(sta_id[0]);
+                //this.json_tmp = this.json_tmp.filter(function (n) { if (n.initiator == sta_id[0].id) return n.id;});
+                
+                //SetRadius(this.json_tmp.length);
      
                 if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
-                //console.log(this.password);
             }
         },  
         computed:{                          /* supervise vars           */
@@ -178,7 +190,7 @@
             backgroundBorderWidth: 14,
             backgroundColor: "none",
             fontColor: "black",
-            percent: 75
+            percent: 90
         });
         $("#circle_2").circliful({
             animationStep: 10,
