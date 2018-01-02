@@ -152,8 +152,12 @@
                 }      
             },                             /* Big SEARCH                */
             search: function(event){
-                var tmp_text = event.target.value;
-                this.json_tmp = this.json_tmp.filter(function (n){ return n.name <= tmp_text;});
+                var tmp_text = event.target.value.toUpperCase();
+
+                //this.json_tmp = this.json_tmp.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
+                this.json_tmp = this.json_tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.participation;});
+                
+     
                 if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
                 //console.log(this.password);
             }
