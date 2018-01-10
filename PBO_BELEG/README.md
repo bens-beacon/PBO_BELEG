@@ -2,7 +2,12 @@
 
 Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein One-Pager sein, aber dennoch total interaktiv sein. Wichtig in der JSON ist alles ab Process, das davor gilt nur für die Visualisierung. 
 
+## Wichtig
+
+* Karten sollen nicht alles zeigen -> dazu own.css ändern .mem = none
+
 ## Was ist noch zu tun:
+
 * Also Amfang der Seite soll ein Bereich sein, wo man auswählen kann was wie angezeigt werden soll!
 * Beispiele können sein:
 	1. Nach Name Sortiert
