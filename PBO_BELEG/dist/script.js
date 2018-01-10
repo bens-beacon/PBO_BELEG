@@ -159,28 +159,44 @@
                     json_tmp_project = this.json_tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.name;});
                 
                     // search for location
-                    //var tmp = this.json_data.process.locations; 
-                    //var loc_id = tmp.filter(function (n) { if (n.city.toUpperCase().includes(tmp_text)) return n.id;});
-                    //json_tmp_location = this.json_tmp.filter(function (n) { if (n.location[0] == loc_id[0].id) return n.location;});
-                
-                    // search for person/stakeholder
-                    //var tmp = this.json_data.process.stakeholder; 
-                    //var sta_id = tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.id;});
-                    //console.log(this.json_tmp[0].initiator);
-                    /*
-                    if(sta_id.length > 0){
-                        this.json_tmp = this.json_tmp.filter(function (n) { 
-                        for(i in sta_id){
-                            if (n.initiator == sta_id[i].id) return n.initiator; }});
-                            console.log(sta_id[i].id);
+                    var json_tmp_location = [];
+                    var tmp = this.json_data.process.locations; 
+                    var loc_id = tmp.filter(function (n) { if (n.city.toUpperCase().includes(tmp_text)) return n.id;});
+                    if(loc_id.length > 0)
+                    {
+                        json_tmp_location = this.json_tmp.filter(function (n) 
+                        { 
+                            for(i in loc_id)
+                            {
+                                if (n.location[0] == loc_id[i].id) return n.location;
+                            }
+                        });
                     }
-                    */
 
+                    // search for person/stakeholder
+                    var json_tmp_stakeholder = [];
+                    var tmp = this.json_data.process.stakeholder; 
+                    var sta_id = tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.id;});
+                    if(sta_id.length > 0)
+                    {
+                        json_tmp_stakeholder = this.json_tmp.filter(function (n) 
+                        { 
+                            for(i in sta_id)
+                            {
+                                if (n.initiator == sta_id[i].id) return n.initiator; 
+                            }
+                        });
+                        console.log(sta_id[i].id);
+                    }
                     
-                    this.json_tmp = json_tmp_state ;
+                    // put the result together
+                    //this.json_tmp = json_tmp_stakeholder;
+                    json_tmp_search_1 =  json_tmp_state.concat(json_tmp_project);
+                    json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location);
+                    //json_tmp_search_3 =  json_tmp_search_2.concat(json_tmp_stakeholder);
+                    this.json_tmp =  json_tmp_search_2;
                 }
 
-                //SetRadius(this.json_tmp.length);
                 // if there is nothing to search
                 if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
             }
