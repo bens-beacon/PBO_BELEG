@@ -8,6 +8,7 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * Sortieren nach Initiator und Ort
 * Suche und Effizienz
 * Suche auch wenn ein Zeichen gelöscht wurde
+* für Links rechts, soll Suchfunktion aufgerufen werden
 
 ## Was ist noch zu tun:
 

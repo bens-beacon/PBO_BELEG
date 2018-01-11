@@ -16,7 +16,18 @@
             return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
         } 
     }
-
+    /* DE-Duplicate */
+    Array.prototype.unique = function() {
+        var a = this.concat();
+        for(var i=0; i<a.length; ++i) {
+            for(var j=i+1; j<a.length; ++j) {
+                if(a[i] === a[j])
+                    a.splice(j--, 1);
+            }
+        }
+    
+        return a;
+    };
     /* ---- VUE ------------------------------------------------------- */
     new Vue(
     {
@@ -188,9 +199,9 @@
                     // put the result together
                     //this.json_tmp = json_tmp_stakeholder;
                     json_tmp_search_1 =  json_tmp_state.concat(json_tmp_project);
-                    json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location);
+                    json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location).unique();
                     //json_tmp_search_3 =  json_tmp_search_2.concat(json_tmp_stakeholder);
-                    this.json_tmp =  json_tmp_search_1;
+                    this.json_tmp =  json_tmp_search_2;
                 }
                 
                 // if there is nothing to search
