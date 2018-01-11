@@ -17,10 +17,6 @@
         } 
     }
 
-    function SetRadius(value){
-    }
-
-
     /* ---- VUE ------------------------------------------------------- */
     new Vue(
     {
@@ -149,7 +145,7 @@
             },                             /* Big SEARCH                */
             search: function(event){
                 var tmp_text = event.target.value.toUpperCase();
-                
+                console.log(tmp_text);
                 if(tmp_text.length > 0)
                 {
                     // search for state
@@ -194,9 +190,9 @@
                     json_tmp_search_1 =  json_tmp_state.concat(json_tmp_project);
                     json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location);
                     //json_tmp_search_3 =  json_tmp_search_2.concat(json_tmp_stakeholder);
-                    this.json_tmp =  json_tmp_search_2;
+                    this.json_tmp =  json_tmp_search_1;
                 }
-
+                
                 // if there is nothing to search
                 if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
             }
@@ -207,7 +203,7 @@
         }
     });
 
-
+/*
 
 
     $( document ).ready(function() {
@@ -236,3 +232,5 @@
             percent: 10
         });
     });  
+
+*/
