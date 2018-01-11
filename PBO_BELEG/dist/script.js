@@ -156,14 +156,14 @@
             },                             /* Big SEARCH                */
             search: function(event){
                 var tmp_text = event.target.value.toUpperCase();
-                console.log(tmp_text);
+                var json_tmp_search = this.json_data.process.childs;
                 if(tmp_text.length > 0)
                 {
                     // search for state
-                    json_tmp_state = this.json_tmp.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
+                    json_tmp_state = json_tmp_search.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
                 
                     // serach for project
-                    json_tmp_project = this.json_tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.name;});
+                    json_tmp_project = json_tmp_search.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.name;});
                 
                     // search for location
                     var json_tmp_location = [];
@@ -171,7 +171,7 @@
                     var loc_id = tmp.filter(function (n) { if (n.city.toUpperCase().includes(tmp_text)) return n.id;});
                     if(loc_id.length > 0)
                     {
-                        json_tmp_location = this.json_tmp.filter(function (n) 
+                        json_tmp_location = json_tmp_search.filter(function (n) 
                         { 
                             for(i in loc_id)
                             {
@@ -186,7 +186,7 @@
                     var sta_id = tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.id;});
                     if(sta_id.length > 0)
                     {
-                        json_tmp_stakeholder = this.json_tmp.filter(function (n) 
+                        json_tmp_stakeholder = json_tmp_search.filter(function (n) 
                         { 
                             for(i in sta_id)
                             {
@@ -214,9 +214,8 @@
         }
     });
 
-/*
-
-
+    /* ---- Sonstiges ------------------------------------------------- */
+    /*
     $( document ).ready(function() {
         $("#circle_1").circliful({
             animationStep: 10,
@@ -243,5 +242,4 @@
             percent: 10
         });
     });  
-
-*/
+    */

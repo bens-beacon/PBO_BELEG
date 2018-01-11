@@ -41,7 +41,6 @@
                 <div class="form-group">
                   <input v-on:keyup="search" type="text" placeholder="Suche" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success">Suchen</button>
               </form>
             </div><!--/.navbar-collapse -->
           </div>
@@ -167,7 +166,7 @@
               <hr>
               <ol class="list-unstyled">
                 <div v-for="item_0 in json_data.process.stakeholder">
-                  <li><a href="#">{{item_0.name}}</a></li>   
+                  <li><a href="#" v-on:click="search()">{{item_0.name}}</a></li>   
                 </div>
               </ol>
               <h3>Orte</h3>
