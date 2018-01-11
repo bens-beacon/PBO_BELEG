@@ -60,7 +60,19 @@
             },
             SortInitiator: function(){
                 //alert(JsonCount(this.json_data.process.childs));
-                this.json_tmp = this.json_tmp.sort(sort_by('initiator',true,this.GetInitiator(a)));
+                var tmp = this.json_data.process.stakeholder;
+                var json_tmp_sort = this.json_data.process.childs;
+                var tmp_sort = tmp.sort(sort_by('name',true,function(a){return a.toUpperCase()}));
+                var tmp_result=[];
+                for(j in tmp_sort)
+                {
+                    var result = json_tmp_sort.filter(function (n) { if (n.initiator == tmp_sort[j].id) return n.initiator;});
+                    console.log(result.name);
+                    tmp_result = [].concat(result);
+                }
+                this.json_tmp = result;
+
+
             },
             GetInitiator: function(id){
                 var tmp = this.json_data.process.stakeholder;  
@@ -157,8 +169,7 @@
             search: function(event){
                 var tmp_text = event.target.value.toUpperCase();
                 var json_tmp_search = this.json_data.process.childs;
-                if(tmp_text.length > 0)
-                {
+                if(tmp_text.length > 0){
                     // search for state
                     json_tmp_state = json_tmp_search.filter(function (n) { if (n.participation.toUpperCase().includes(tmp_text)) return n.participation;});
                 
@@ -169,12 +180,9 @@
                     var json_tmp_location = [];
                     var tmp = this.json_data.process.locations; 
                     var loc_id = tmp.filter(function (n) { if (n.city.toUpperCase().includes(tmp_text)) return n.id;});
-                    if(loc_id.length > 0)
-                    {
-                        json_tmp_location = json_tmp_search.filter(function (n) 
-                        { 
-                            for(i in loc_id)
-                            {
+                    if(loc_id.length > 0){
+                        json_tmp_location = json_tmp_search.filter(function (n) { 
+                            for(i in loc_id){
                                 if (n.location[0] == loc_id[i].id) return n.location;
                             }
                         });
@@ -184,12 +192,9 @@
                     var json_tmp_stakeholder = [];
                     var tmp = this.json_data.process.stakeholder; 
                     var sta_id = tmp.filter(function (n) { if (n.name.toUpperCase().includes(tmp_text)) return n.id;});
-                    if(sta_id.length > 0)
-                    {
-                        json_tmp_stakeholder = json_tmp_search.filter(function (n) 
-                        { 
-                            for(i in sta_id)
-                            {
+                    if(sta_id.length > 0){
+                        json_tmp_stakeholder = json_tmp_search.filter(function (n) { 
+                            for(i in sta_id){
                                 if (n.initiator == sta_id[i].id) return n.initiator; 
                             }
                         });
@@ -199,14 +204,15 @@
                     // put the result together
                     //this.json_tmp = json_tmp_stakeholder;
                     json_tmp_search_1 =  json_tmp_state.concat(json_tmp_project);
-                    json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location).unique();
-                    //json_tmp_search_3 =  json_tmp_search_2.concat(json_tmp_stakeholder);
-                    this.json_tmp =  json_tmp_search_2;
+                    json_tmp_search_2 =  json_tmp_search_1.concat(json_tmp_location);
+                    json_tmp_search_3 =  json_tmp_search_2.concat(json_tmp_stakeholder).unique();
+                    this.json_tmp =  json_tmp_search_3;
                 }
                 
                 // if there is nothing to search
                 if(tmp_text == "") this.json_tmp = this.json_data.process.childs;
             }
+
         },  
         computed:{                          /* supervise vars           */
             

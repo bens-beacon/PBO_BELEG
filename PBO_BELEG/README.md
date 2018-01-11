@@ -6,7 +6,6 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 
 * Karten sollen nicht alles zeigen -> dazu own.css ändern .mem = none
 * Sortieren nach Initiator und Ort
-* Suche und Effizienz
 * für Links rechts, soll Suchfunktion aufgerufen werden
 
 ## Was ist noch zu tun:
