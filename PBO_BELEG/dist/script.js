@@ -59,20 +59,18 @@
                 //homes.sort(sort_by('price', true, parseInt));
             },
             SortInitiator: function(){
+                this.state = ~this.state;
                 //alert(JsonCount(this.json_data.process.childs));
                 var tmp = this.json_data.process.stakeholder;
                 var json_tmp_sort = this.json_data.process.childs;
-                var tmp_sort = tmp.sort(sort_by('name',true,function(a){return a.toUpperCase()}));
+                var tmp_sort = tmp.sort(sort_by('name',this.state,function(a){return a.toUpperCase()}));
                 var tmp_result=[];
                 for(j in tmp_sort)
                 {
                     var result = json_tmp_sort.filter(function (n) { if (n.initiator == tmp_sort[j].id) return n.initiator;});
-                    console.log(result.name);
-                    tmp_result = [].concat(result);
+                    tmp_result = tmp_result.concat(result).unique();
                 }
-                this.json_tmp = result;
-
-
+                this.json_tmp = tmp_result;
             },
             GetInitiator: function(id){
                 var tmp = this.json_data.process.stakeholder;  
