@@ -167,7 +167,13 @@
                 }      
             },                             /* Big SEARCH                */
             search: function(event){
-                var tmp_text = event.target.value.toUpperCase();
+
+                var tmp_text = "";
+                // ckeck if event or just a string
+                if (typeof event === 'string' || event instanceof String) tmp_text = event.toUpperCase();
+                else var tmp_text = event.target.value.toUpperCase();
+
+
                 var json_tmp_search = this.json_data.process.childs;
                 if(tmp_text.length > 0){
                     // search for state
