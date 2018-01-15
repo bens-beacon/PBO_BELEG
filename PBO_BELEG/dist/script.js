@@ -58,9 +58,21 @@
                 this.json_tmp = this.json_tmp.sort(sort_by('name',this.state,function(a){return a.toUpperCase()}));
                 //homes.sort(sort_by('price', true, parseInt));
             },
-            SortInitiator: function(){
+            SortLocation: function(){       /* sort by Location         */
                 this.state = ~this.state;
-                //alert(JsonCount(this.json_data.process.childs));
+                var tmp = this.json_data.process.locations;
+                var json_tmp_sort = this.json_data.process.childs;
+                var tmp_sort = tmp.sort(sort_by('city',this.state,function(a){return a.toUpperCase()}));
+                var tmp_result=[];
+                for(j in tmp_sort)
+                {
+                    var result = json_tmp_sort.filter(function (n) { if (n.location[0] == tmp_sort[j].id) return n.location[0];});
+                    tmp_result = tmp_result.concat(result).unique();
+                }
+                this.json_tmp = tmp_result;
+            },
+            SortInitiator: function(){      /* sort by inititator        */
+                this.state = ~this.state;
                 var tmp = this.json_data.process.stakeholder;
                 var json_tmp_sort = this.json_data.process.childs;
                 var tmp_sort = tmp.sort(sort_by('name',this.state,function(a){return a.toUpperCase()}));
