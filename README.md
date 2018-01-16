@@ -9,7 +9,6 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * suche nach Projektname, Projektort, Projektmitarbeiter, Status
 * Inhalte darstellen
 
-
 ## Wichtig
 
 * Karten sollen nicht alles zeigen -> dazu own.css ändern .mem = none
@@ -54,6 +53,8 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 http://jsonviewer.stack.hu/ ... Code einfügen anschauen.
 
 ## Kreise
+
+* Sind momentan eingeklappt. 
 
 https://github.com/pguso/jquery-plugin-circliful
 

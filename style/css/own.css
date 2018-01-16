@@ -1,32 +1,44 @@
-html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
-    /* Margin bottom by footer height */
-    padding-top: 70px;
-    padding-bottom: 150px;
-    margin-bottom: 60px;
-  }
-  /* Footer */
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 150px;
-    background-color: #242424da;
-    color: white;
-  }
-.control{
-    border: 1px solid rgb(201, 201, 201);
-    background-color: #242424f3;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 5px 5px 5px;
-    margin-bottom: 10px;
-  }
+@font-face {
+	font-family: trench;
+	src: url('../fonts/trench.otf') format('opentype');
+}
 
-  .mem{
-    display: block;
-  }
+
+html {
+  position: relative;
+   min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  padding-top: 70px;
+  padding-bottom: 150px;
+  margin-bottom: 60px;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  background-color: #242424da;
+  color: white;
+}
+.control{
+  border: 1px solid rgb(201, 201, 201);
+  background-color: #242424f3;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+}
+
+.exfont{
+  font-family: trench;
+}
+
+.mem{
+  display: block;
+}

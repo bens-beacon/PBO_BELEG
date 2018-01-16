@@ -49,7 +49,6 @@
                 self.child_num = JsonCount(self.json_data.process.childs);
                 self.locat_num = JsonCount(self.json_data.process.locations);
                 self.stake_num = JsonCount(self.json_data.process.stakeholder);
-                //alert(JsonCount(self.json_data.process.childs));
             });     
         }, 
         methods: {                          /* functions                */
@@ -236,7 +235,7 @@
         }
     });
 
-    /* ---- Sonstiges ------------------------------------------------- */
+    /* ---- Stuff     ------------------------------------------------- */
     /*
     $( document ).ready(function() {
         $("#circle_1").circliful({
