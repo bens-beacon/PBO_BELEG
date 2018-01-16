@@ -2,6 +2,14 @@
 
 Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein One-Pager sein, aber dennoch total interaktiv sein. Wichtig in der JSON ist alles ab Process, das davor gilt nur für die Visualisierung. 
 
+## Was kann diese Seite?
+
+* alle Karten ein/ausklappen
+* sortieren nach Projektname, Projektort, Projektmitarbeiter
+* suche nach Projektname, Projektort, Projektmitarbeiter, Status
+* Inhalte darstellen
+
+
 ## Wichtig
 
 * Karten sollen nicht alles zeigen -> dazu own.css ändern .mem = none
