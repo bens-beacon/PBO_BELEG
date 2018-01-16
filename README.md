@@ -61,3 +61,8 @@ https://github.com/pguso/jquery-plugin-circliful
 ## Listen
 
 https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects#979289
+
+## Copyright
+
+Ben Schönherr
+s74083
