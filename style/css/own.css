@@ -37,6 +37,12 @@ body {
 
 .exfont{
   font-family: trench;
+  transform: rotate(-90deg);
+  font-size: 2em;
+}
+
+.copyrightbox{
+  padding-top: 8ch;
 }
 
 .mem{
