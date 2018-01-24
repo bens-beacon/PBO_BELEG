@@ -38,6 +38,7 @@
             locat_num:0,
             stake_num:0,
             state: false,
+            SortNameState: true,
             json_data: {system:[] , process:[]},
             json_tmp: {}
         },
@@ -55,6 +56,14 @@
             SortName: function(){           /* sort by name             */
                 this.state = ~this.state; 
                 this.json_tmp = this.json_tmp.sort(sort_by('name',this.state,function(a){return a.toUpperCase()}));
+                /*if(SortNameState) {
+                    document.getElementById("SortNameSpan").className = "glyphicon glyphicon-triangle-top";
+                    SortNameState = false;
+                }
+                else {
+                    document.getElementById("SortNameSpan").className = "glyphicon glyphicon-triangle-bottom";
+                    SortNameState = true;
+                }*/
                 //homes.sort(sort_by('price', true, parseInt));
             },
             SortLocation: function(){       /* sort by Location         */
@@ -148,10 +157,12 @@
             KlappAllOut: function(){           
                 var elements = document.getElementsByClassName("mem");
                 for (var i = 0, len = elements.length; i < len; i++) {
-                    if (elements[i].style.display === "block") {
-                        elements[i].style.display = "none";
-                    } else {
+                    if (elements[i].style.display === "none") {
                         elements[i].style.display = "block";
+                        document.getElementById("KartenEinAus").innerHTML = "Alle Karten einklappen";
+                    } else {
+                        elements[i].style.display = "none";
+                        document.getElementById("KartenEinAus").innerHTML = "Alle Karten ausklappen";
                     }  
                 }   
             },

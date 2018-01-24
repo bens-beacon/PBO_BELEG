@@ -37,14 +37,15 @@ body {
 
 .exfont{
   font-family: trench;
-  transform: rotate(-90deg);
+  transform: rotate(-45deg);
   font-size: 2em;
 }
 
 .copyrightbox{
   padding-top: 8ch;
+  width: 45px;
 }
 
 .mem{
-  display: none;
+  display: block;
 }
