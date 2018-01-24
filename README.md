@@ -9,12 +9,19 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * suche nach Projektname, Projektort, Projektmitarbeiter, Status
 * Inhalte darstellen
 
-## Wichtig
+## Fragen
 
-* Karten sollen nicht alles zeigen -> dazu own.css ändern .mem = none
-* Schriften / Design
+... keine
+	
 
-## Was ist noch zu tun:
+## Was ist noch zu tun?
+
+* Copyright Benson entfernen von index.html oder deins hinzufügen
+* Kontrolle
+* Alle Punkte in "Was ist noch zu tun?" entfernen. -> Readme Update
+
+
+## Woran wurde sich orientiert?:
 
 * Also Amfang der Seite soll ein Bereich sein, wo man auswählen kann was wie angezeigt werden soll!
 * Beispiele können sein:
@@ -33,10 +40,6 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * Verbindungen schöner darstellen
 * Lösungen anzeigen?! -> Weiß nicht ob wichtig.
 
-## Fragen
-
-... keine
-	
 ## Eigentliche Aufgabe von Prof. Freitag
 
 * interaktive Website als One-Pager
@@ -64,5 +67,5 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 
 ## Copyright
 
-Ben Schönherr
-s74083
+Ben Schönherr, s74083
+Eric Schmidgen, s73952
