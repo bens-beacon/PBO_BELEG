@@ -9,18 +9,6 @@ Lese die JSON-Datei aus und visualisiere deren Inhalte! Die Seite soll zwar ein 
 * suche nach Projektname, Projektort, Projektmitarbeiter, Status
 * Inhalte darstellen
 
-## Fragen
-
-... keine
-	
-
-## Was ist noch zu tun?
-
-* Copyright Benson entfernen von index.html oder deins hinzufügen
-* Kontrolle
-* Alle Punkte in "Was ist noch zu tun?" entfernen. -> Readme Update
-
-
 ## Woran wurde sich orientiert?:
 
 * Also Amfang der Seite soll ein Bereich sein, wo man auswählen kann was wie angezeigt werden soll!
@@ -67,5 +55,4 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 
 ## Copyright
 
-Ben Schönherr, s74083
-Eric Schmidgen, s73952
+Ben Schönherr (s74083) ; Eric Schmidgen (s73952)
