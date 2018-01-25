@@ -56,15 +56,6 @@
             SortName: function(){           /* sort by name             */
                 this.state = ~this.state; 
                 this.json_tmp = this.json_tmp.sort(sort_by('name',this.state,function(a){return a.toUpperCase()}));
-                /*if(SortNameState) {
-                    document.getElementById("SortNameSpan").className = "glyphicon glyphicon-triangle-top";
-                    SortNameState = false;
-                }
-                else {
-                    document.getElementById("SortNameSpan").className = "glyphicon glyphicon-triangle-bottom";
-                    SortNameState = true;
-                }*/
-                //homes.sort(sort_by('price', true, parseInt));
             },
             SortLocation: function(){       /* sort by Location         */
                 this.state = ~this.state;
